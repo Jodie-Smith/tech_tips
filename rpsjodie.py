@@ -34,40 +34,59 @@ def computer_option():
 
 
 
+def getWinner():
 
-user_choice = player_option()
-computer_choice = computer_option()
+    
+    user_choice = player_option()
+    computer_choice = computer_option()
+    answer = ""
 
-if user_choice == "rock":
-    if computer_choice == "rock":
-         print("You chose rock, the computer chose rock. It's a tie!")
-    if computer_choice == "paper":
-        print("You chose rock, the computer chose paper. You lose.")
-    if computer_choice == "scissors":
-        print("You chose rock, the computer chose scissors. You win!")
-
-
-if user_choice == "paper":
-    if computer_choice == "rock":
-         print("You chose paper, the computer chose rock. You win!")
-    if computer_choice == "paper":
-        print("You chose paper, the computer chose paper. It's a tie!")
-    if computer_choice == "scissors":
-        print("You chose paper, the computer chose scissors. You lose.")
-
-if user_choice == "scissors":
-    if computer_choice == "rock":
-        print("You chose scissors, the computer chose rock. You lose.")
-    if computer_choice == "paper":
-        print("You chose scissors, the computer chose paper. You win!")
-    if computer_choice == "scissors":
-        print("You chose scissors, the computer chose scissors. It's a tie!")
+    if user_choice == "rock":
+       
+        if computer_choice == "rock":
+            answer = "You chose rock, the computer chose rock. It's a tie!"
+       
+        if computer_choice == "paper":
+            answer = "You chose rock, the computer chose paper. You lose."
+       
+        if computer_choice == "scissors":
+            answer = "You chose rock, the computer chose scissors. You win!"
 
 
+    if user_choice == "paper":
+        
+        if computer_choice == "rock":
+            answer = "You chose paper, the computer chose rock. You win!"
+        
+        if computer_choice == "paper":
+            answer = "You chose paper, the computer chose paper. It's a tie!"
+        
+        if computer_choice == "scissors":
+            answer = "You chose paper, the computer chose scissors. You lose."
 
-# user_choice = input("Do you want to play again? y/n?").lower()
-# if user_choice in ['y', 'yes']:
-#     pass
-# else:
-#     print("end of game")
-#
+    if user_choice == "scissors":
+        
+        if computer_choice == "rock":
+            answer =  "You chose scissors, the computer chose rock. You lose."
+        
+        if computer_choice == "paper":
+            answer = "You chose scissors, the computer chose paper. You win!"
+        
+        if computer_choice == "scissors":
+            answer = "You chose scissors, the computer chose scissors. It's a tie!"
+
+    return answer
+
+def runGame():
+
+    print(getWinner())
+
+    user_choice = input("Do you want to play again? y/n?").lower()
+    if user_choice in ['y', 'yes']:
+        runGame()
+    else:
+     print("end of game")
+
+
+runGame()
+
