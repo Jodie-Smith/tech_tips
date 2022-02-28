@@ -15,7 +15,6 @@ def player_option():
 
    return user_choice
 
-
 def computer_option():
     computer_choice = random.randint(0, 2)
     match computer_choice:
@@ -27,8 +26,6 @@ def computer_option():
             computer_choice = "scissors"
 
     return computer_choice
-
-
 
 def getWinner():
     user_choice = player_option()
